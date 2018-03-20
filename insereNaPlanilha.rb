@@ -4,9 +4,9 @@ require("bundler")
 Bundler.require
 
 # app.rb
-def worksheet #folhaDeCalculo
+def worksheet 
   @session ||= GoogleDrive::Session.from_service_account_key("client_secret.json")
-  @spreadsheet ||= @session.spreadsheet_by_title("Pedidos") # planilha
+  @spreadsheet ||= @session.spreadsheet_by_title("Lanches_bemol") 
   @worksheet ||= @spreadsheet.worksheets.first
 end
 

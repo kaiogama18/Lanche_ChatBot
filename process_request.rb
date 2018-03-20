@@ -1,6 +1,7 @@
 require_relative './facebook'
 require_relative 'insereNaPlanilha'
 require_relative 'recebeNaPlanilha'
+require_relative 'menu'
 require_relative 'formulario'
 require 'pp'
 
@@ -23,9 +24,10 @@ class ProcessRequest
       	  fb.post(fb.messageText(messengerID,messageText))
         when 'action-pedido'
           puts messengerID
-          fb.post(ChamarMenu(messengerID))
+          fb.post(ChamarPedido(messengerID))
           #fb.post(fb.messageText(messengerID,messageText))
-      end
-        
+        end
+        pedido = VerficarMenu(messengerAction)
+        inserirDadosNaPlanilha(pedido)
      end 
 end

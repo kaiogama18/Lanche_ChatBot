@@ -9,7 +9,7 @@ require 'pp'
 require_relative './facebook'
 require_relative 'process_request'
 
-set :port, 5000
+set :port, 8000
 
 post "/webhook" do
 	pq = ProcessRequest.new
@@ -33,7 +33,7 @@ def worksheet #folhaDeCalculo
 end
 # app.rb
 post "/" do 
-  new_row = [params["name"], params["pedido"]]
+  new_row = [params["Sugestão Lanches"], params["Sugestão Bebida"]]
   begin
     worksheet.insert_rows(worksheet.num_rows + 1, [new_row])
     worksheet.save
