@@ -22,17 +22,10 @@ class ProcessRequest
           inserirDadosNaPlanilha(messagerPedido)
           messageText = 'Seu pedido foi salvo na planilha com sucesso'
       	  fb.post(fb.messageText(messengerID,messageText))
-        when 'action-pedido'
-          puts messengerID
-          fb.post(ChamarPedido(messengerID))
-          #fb.post(fb.messageText(messengerID,messageText))
-        when 'action-menuo'
-          puts 'Test'
-          messageText = fb.getPedido(request_json) 
-          fb.post(fb.messageText(messengerID,messageText))
         end
-        
+      resposta = VerficarMenu(messengerAction)
+      fb.post(FinalizarCompra(resposta,messengerID))
         #pedido = VerficarMenu(messengerAction)
         #inserirDadosNaPlanilha(pedido)
-     end 
+    end 
 end

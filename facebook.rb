@@ -86,6 +86,16 @@ class Facebook
       return messengerPedido
     end
 
+    def getActionContent(request_json,action)
+      pedido = ""
+      action = (":"+action)
+      puts action
+      request_json[:result][:contexts].each do |row|
+        pedido = row[:parameters][action] if row[:parameters].key? action
+      end
+      return pedido
+    end
+
     #Recebe a messagens que o usuario informou
     def parseGetResposta(request_json)
       resposta = ""

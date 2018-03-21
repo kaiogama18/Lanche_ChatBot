@@ -1,3 +1,4 @@
+
 require_relative './process_request'
 require("bundler")
 require 'json'
@@ -9,9 +10,24 @@ def VerficarMenu(messengerAction)
         puts "Suco adicionado"
     when 'action-coxinha'
         puts "Adicionado com sucesso a coxinha"
-        return '1 unidade, coxinha - Custo R$0,25'
-    end    
+        
+    when 'action-salgadodoce'    
+    	puts '=========== Dentro da opção Salgado e Doce ================'
+        puts messengerAction
+        puts "O que está Mostrando
+       " 
+        puts '=========== Está Mostrando um Puts ================'
+    	return 'true'
+    end	
 end
 
-def ChamadaPergunta()
+def FinalizarCompra(resposta,messengerID)
+	if resposta == 'true'
+		text = 'Deseja finalizar o pedido?'
+		objJson = {
+      		:recipient => {:id   => messengerID},
+      		:message   => {:text => text}
+    	}
+    	return objJson
+	end	
 end
