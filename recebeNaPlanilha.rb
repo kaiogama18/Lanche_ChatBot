@@ -65,34 +65,4 @@ def ChamarPedido(messengerID)
 	return objJson
 end
 
-def ChamadaWebView(messengerID)
-	objJson = {
-		:recipient => {:id   => messengerID},
-		:message   => {
-			:attachment => {
-				:type => "template",
-				:payload => {
-					:template_type => "button",
-					:text => "Escolhar a opção",
-					:buttons => [
-						{
-							:type =>"web_url",
-			   		        :url =>"https://36fd3327.grok.io",
-							:title => "Comprar"
-
-						},
-						{
-							:type =>"web_url",
-							:url =>"https://www.messenger.com",
-							:title => "Cadastrar"
-						}
-					]
-				}
-			}
-		}
-	}
-	puts objJson
-	return objJson
-end
-
 

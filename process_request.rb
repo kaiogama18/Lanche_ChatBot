@@ -26,8 +26,13 @@ class ProcessRequest
           puts messengerID
           fb.post(ChamarPedido(messengerID))
           #fb.post(fb.messageText(messengerID,messageText))
+        when 'action-menuo'
+          puts 'Test'
+          messageText = fb.getPedido(request_json) 
+          fb.post(fb.messageText(messengerID,messageText))
         end
-        pedido = VerficarMenu(messengerAction)
-        inserirDadosNaPlanilha(pedido)
+        
+        #pedido = VerficarMenu(messengerAction)
+        #inserirDadosNaPlanilha(pedido)
      end 
 end

@@ -20,3 +20,6 @@ def inserirDadosNaPlanilha(pedido)
 	    error = "Algo errado aconteceu!."
 	  end
 end
+
+def inserirDadosNaPlanilha(pedido)
+end

@@ -9,7 +9,7 @@ def VerficarMenu(messengerAction)
         puts "Suco adicionado"
     when 'action-coxinha'
         puts "Adicionado com sucesso a coxinha"
-        return 'coxinha '
+        return '1 unidade, coxinha - Custo R$0,25'
     end    
 end
 
