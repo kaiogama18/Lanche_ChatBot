@@ -70,7 +70,7 @@ class Facebook
 
         request_json[:result][:contexts].each do |row|
     
-          resposta = row[:parameters][value] if row[:parameters].key? value
+          resposta = row[:parameters][:action-salgadodoce] if row[:parameters].key? :action-salgadodoce
     
         end
 
