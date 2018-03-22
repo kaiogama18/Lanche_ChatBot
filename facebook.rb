@@ -63,14 +63,13 @@ class Facebook
 
     # *****************************************************************************************************************************************************************
     def parseGetRespostaUser(request_json,value)
-        resposta = ""
         value = (":"+value)
-    
-        puts ("################# =>" + value)
+        resposta = ""
+        puts ("=>" + value)
 
         request_json[:result][:contexts].each do |row|
     
-          resposta = row[:parameters][:action-salgadodoce] if row[:parameters].key? :action-salgadodoce
+          resposta = row[:parameters][value] if row[:parameters].key? value
     
         end
 

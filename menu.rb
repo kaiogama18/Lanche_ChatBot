@@ -6,7 +6,7 @@ Bundler.require
 
 def VerficarMenu(messengerAction)
     case messengerAction
-        when 'action-salgadodoce'    
+        when 'action_salgadodoce'    
     	   puts '=========== Dentro da opção Salgado e Doce ================'
             puts ("----------------> "+messengerAction)
             puts '=========== Fim da opção Salgado e Doce ================'
@@ -19,7 +19,7 @@ def VerficarMenu(messengerAction)
         when 'action-bebida'
             puts '=========== Dentro da opção action-bebida ================'
             puts ("----------------> "+messengerAction)
-            puts '=========== Fim da opção action-bebida ================'
+            puts '=========== Fim da opção Bebida ================'
             return 'true'
     end	
 end

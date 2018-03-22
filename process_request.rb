@@ -20,7 +20,7 @@ class ProcessRequest
       puts "################# Dentro do ProcessRequest #################"
       resposta = VerficarMenu(messengerAction)
       # fb.post(FinalizarCompra(resposta,messengerID))
-      puts ("========> "+resposta)
+      # puts ("========> "+resposta)
       aux =FinalizarCompra(resposta,messengerID)
       fb.post(aux) 
       puts "################# Fim do ProcessRequest #################"
