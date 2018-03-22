@@ -6,18 +6,21 @@ Bundler.require
 
 def VerficarMenu(messengerAction)
     case messengerAction
-    when 'action-suco'
-        puts "Suco adicionado"
-    when 'action-coxinha'
-        puts "Adicionado com sucesso a coxinha"
-        
-    when 'action-salgadodoce'    
-    	puts '=========== Dentro da opção Salgado e Doce ================'
-        puts messengerAction
-        puts "O que está Mostrando
-       " 
-        puts '=========== Está Mostrando um Puts ================'
-    	return 'true'
+        when 'action-salgadodoce'    
+    	   puts '=========== Dentro da opção Salgado e Doce ================'
+            puts ("----------------> "+messengerAction)
+            puts '=========== Fim da opção Salgado e Doce ================'
+    	   return 'true'
+        when 'action-bolosanduiche'
+            puts '=========== Dentro da opção Bolo Sanduiche ================'
+            puts ("----------------> "+messengerAction)
+            puts '=========== Fim da opção Bolo Sanduiche ================'
+            return 'true'
+        when 'action-bebida'
+            puts '=========== Dentro da opção action-bebida ================'
+            puts ("----------------> "+messengerAction)
+            puts '=========== Fim da opção action-bebida ================'
+            return 'true'
     end	
 end
 

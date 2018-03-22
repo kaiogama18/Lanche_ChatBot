@@ -6,7 +6,10 @@ FB_MESSAGES     = 'https://graph.facebook.com/v2.10/me/messages'
 #Chave para o facebook Igor
 #FB_ACCESS_TOKEN = 'EAAFPp0gLttwBAPO0bkZBu9k4jKVeTrDO4vM5cjin3KhJvreN06RdZCKiKRZAW9xsSDYeQmzGe46nkeFomsmbmjRVVil5hCkCl8I1z7A8IJI1MZAmABAMHrnZBoVzgIA3r6ZB8zZAQPAegM6wnApp7DTf3aP5Xfc1NLf2ZBphBgGKZBAZDZD'
 #Chave para o facebook Eduardo
-FB_ACCESS_TOKEN = 'EAAFZCxMnvC94BAD0H6ciasGQbIZBA4aUbbLrlckRf8DpgbesPFtfMfyLiaCb1nyn3WLeHjY0VXTTN51ZBe7QYFxSc5OhqQa4Pp2U5rJGuqGrMBYnL2lkb3RnuktXPzkpCADZCBuZBvZB9MNJo9nLlHm3s0v5MawXYbot52A3Rz2QZDZD'
+# FB_ACCESS_TOKEN = 'EAAFZCxMnvC94BAD0H6ciasGQbIZBA4aUbbLrlckRf8DpgbesPFtfMfyLiaCb1nyn3WLeHjY0VXTTN51ZBe7QYFxSc5OhqQa4Pp2U5rJGuqGrMBYnL2lkb3RnuktXPzkpCADZCBuZBvZB9MNJo9nLlHm3s0v5MawXYbot52A3Rz2QZDZD'
+
+#Chave para o bemo.facebook Eduardo
+FB_ACCESS_TOKEN = 'DQVJ1dFBwR2RvMlpYcFpYVS02eEM0WU9xZA08wbVN1VTNjWE9IdklSLXc2ODZAFTHFUV1E4YmhTdmI1aC1udlhkTlNEdTFOaWFBaEVUWDdGSmxmSXI4TWxRb04yQS1feTlyYW9SeU4wcmpzM3hSdlpxa2dKVC1GbkUxSkcyM3ozQWFscUNoRGxhNkZA4eVFoWFA0bHV1blFHSXlWdGFod0xWNFY2VDB1QmxoQ2JzeXRZAWlpMTDA4cjJ4UFRSN3ROcWN2ajFpNUxR'
 class Facebook
 
   def post(objJson)
@@ -56,6 +59,26 @@ class Facebook
       end
       return messengerID
     end
+
+
+    # *****************************************************************************************************************************************************************
+    def parseGetRespostaUser(request_json,value)
+        resposta = ""
+        value = (":"+value)
+    
+        puts ("################# =>" + value)
+
+        request_json[:result][:contexts].each do |row|
+    
+          resposta = row[:parameters][value] if row[:parameters].key? value
+    
+        end
+
+      return resposta
+
+    end
+
+    # *****************************************************************************************************************************************************************
 
     def parseGetMenu(request_json)
       menu = ""
